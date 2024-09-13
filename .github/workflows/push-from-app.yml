@@ -37,6 +37,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
+          ref: 'refs/pull/${{ github.event.number }}/merge'
       - run: |
           git config --global user.name "anthms"
           git config --global user.email "86444119+anthms@users.noreply.github.com"
