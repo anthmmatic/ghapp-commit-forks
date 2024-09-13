@@ -11,7 +11,6 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
-          repositories: ${{ github.event.pull_request.head.repo.full_name }}
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -35,7 +34,6 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
-          repositories: ${{ github.event.pull_request.head.repo.full_name }}
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
