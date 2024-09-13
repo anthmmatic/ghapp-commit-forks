@@ -15,6 +15,7 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
           ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.name }}
       - run: |
           git config --global user.name "anthms"
           git config --global user.email "86444119+anthms@users.noreply.github.com"
