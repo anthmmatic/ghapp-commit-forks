@@ -4,6 +4,7 @@ on:
 
 jobs:
   push-to-head-branch:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v1
@@ -26,7 +27,6 @@ jobs:
           git push origin
           
   push-to-default-ref:
-    needs: push-to-head-branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v1
