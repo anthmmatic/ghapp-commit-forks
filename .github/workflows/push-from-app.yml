@@ -26,6 +26,7 @@ jobs:
           git push
 
   push-to-base-branch:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v1
