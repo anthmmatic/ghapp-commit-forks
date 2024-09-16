@@ -44,3 +44,20 @@ jobs:
           git add .
           git commit -m "change from workflow run ${{ github.run_id }}"
           git push
+
+  push-to-head-w-token:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SIA_PAT }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - run: |
+          git config --global user.name "anthms"
+          git config --global user.email "86444119+anthms@users.noreply.github.com"
+          
+          echo "#this is a comment" >> .github/workflows/change.yml
+          git add .
+          git commit -m "change from workflow run ${{ github.run_id }}"
+          git push
